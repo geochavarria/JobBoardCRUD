@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace JobBoardApi
 {
@@ -26,6 +27,10 @@ namespace JobBoardApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddDbContext<Models.JobBoardContext>(
+                options => options.UseInMemoryDatabase(databaseName: "JobBoardDB")
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
