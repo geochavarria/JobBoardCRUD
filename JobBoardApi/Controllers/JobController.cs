@@ -22,10 +22,10 @@ namespace JobBoardApi.Controllers
             return _jobService.GetAll();
         }
 
-        [HttpGet("{job}", Name = "GetJob")]
-        public ActionResult<Jobs> Get(string job)
+        [HttpGet("{jobKey}", Name = "GetJob")]
+        public ActionResult<Jobs> Get(int jobKey)
         {
-            var jobResult = _jobService.Get(job);
+            var jobResult = _jobService.Get(jobKey);
             if (jobResult != null)
             {
                 return jobResult;
@@ -35,10 +35,11 @@ namespace JobBoardApi.Controllers
         }
 
         [HttpPost]
+        [Route("[action]")]
         public IActionResult Create(Jobs job)
         {
             var result = _jobService.Insert(job);
-            return CreatedAtRoute("GetJob", new { job = result.Job }, result);
+            return CreatedAtRoute("GetJob", new { jobKey = result.Job }, result);
         }
 
 
@@ -51,16 +52,16 @@ namespace JobBoardApi.Controllers
             {
                 return NotFound();
             }
-            return CreatedAtRoute("GetJob", new { job = result.Job }, result);
+            return CreatedAtRoute("GetJob", new { jobKey = result.Job }, result);
         }
 
 
         [HttpDelete]
-        [Route("[action]/{job}")]
-        public IActionResult Delete(string job)
+        [Route("{jobKey}")]
+        public IActionResult Delete(int jobKey)
         {
-            var jobData = _jobService.Get(job);
-            if (job == null)
+            var jobData = _jobService.Get(jobKey);
+            if (jobData == null)
             {
                 return NotFound();
             }

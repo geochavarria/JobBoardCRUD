@@ -21,12 +21,14 @@ namespace JobBoardApi.Models
             var jobs = new List<Jobs>
             {
                 new  Jobs{
+                    Job = 1,
                     JobTitle = "Ingeniero de Software Web",
                     Description = "Diseño y desarrollo de aplicaciones web y moviles",
                     CreatedAt = DateTime.Now,
                     ExpiresAt = DateTime.Now.AddDays(4)
                 },
                 new  Jobs{
+                    Job = 2,
                     JobTitle = "Desarrollador Java Jr.",
                     Description = "Aplicacion de tecnicas basicas y avanzadas de JAVA",
                     CreatedAt = DateTime.Now.AddDays(-2),

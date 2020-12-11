@@ -1,0 +1,26 @@
+﻿@model JobBoardApi.Models.Jobs
+@{
+}
+<form method="post" action="/Home/Update">
+    @Html.HiddenFor(m => m.Job)
+    <div class="form-group">
+        <label for="JobTitle">Job Title</label>
+        <input type="text" class="form-control" asp-for="@Model.JobTitle" placeholder="Job Title" required>
+
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <input type="text" class="form-control" asp-for="@Model.Description" placeholder="Description" required>
+    </div>
+
+    <div class="form-group">
+        <label for="CreateAt">Description</label>
+        <input type="date" class="form-control" asp-for="@Model.CreatedAt">
+    </div>
+
+    <div class="form-group">
+        <label for="ExpiresAt">Description</label>
+        <input type="date" class="form-control" asp-for="@Model.ExpiresAt">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

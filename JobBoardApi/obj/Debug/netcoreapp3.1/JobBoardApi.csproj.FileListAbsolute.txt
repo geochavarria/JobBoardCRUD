@@ -20,7 +20,6 @@ C:\Grupo Lorena\Desarrollo\JobBoardCRUD\JobBoardApi\bin\Debug\netcoreapp3.1\Micr
 C:\Grupo Lorena\Desarrollo\JobBoardCRUD\JobBoardApi\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Grupo Lorena\Desarrollo\JobBoardCRUD\JobBoardApi\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Grupo Lorena\Desarrollo\JobBoardCRUD\JobBoardApi\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Grupo Lorena\Desarrollo\JobBoardCRUD\JobBoardApi\obj\Debug\netcoreapp3.1\JobBoardApi.csprojAssemblyReference.cache
 C:\Grupo Lorena\Desarrollo\JobBoardCRUD\JobBoardApi\obj\Debug\netcoreapp3.1\JobBoardApi.AssemblyInfoInputs.cache
 C:\Grupo Lorena\Desarrollo\JobBoardCRUD\JobBoardApi\obj\Debug\netcoreapp3.1\JobBoardApi.AssemblyInfo.cs
 C:\Grupo Lorena\Desarrollo\JobBoardCRUD\JobBoardApi\obj\Debug\netcoreapp3.1\JobBoardApi.csproj.CoreCompileInputs.cache

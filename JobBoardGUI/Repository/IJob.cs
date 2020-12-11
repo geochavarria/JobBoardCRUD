@@ -9,9 +9,9 @@ namespace JobBoardGUI.Repository
     public interface IJob
     {
         List<Jobs> GetAll();
-        Jobs Get(string job);
+        Jobs Get(int jobKey);
         Jobs Create(Jobs jobs);
         Jobs Update(Jobs jobs);
-        void Remove(string job);
+        void Remove(int jobKey);
     }
 }

@@ -16,28 +16,48 @@ namespace JobBoardApi.Services
             this.context = _context;
             this.Jobs = _context.JobsData;
 
-
         }
 
+        /// <summary>
+        /// List of All Data
+        /// </summary>
+        /// <returns></returns>
         public List<Jobs> GetAll()
         {
             return Jobs.ToList();
         }
 
 
-        public Jobs Get(string job)
+        /// <summary>
+        /// Get unique Job
+        /// </summary>
+        /// <param name="job"></param>
+        /// <returns></returns>
+        public Jobs Get(int job)
         {
             return Jobs.ToList().Find(x => x.Job == job);
         }
 
-
+        /// <summary>
+        /// Insert Job
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public Jobs Insert(Jobs data)
         {
+            var last = Jobs.LastOrDefault();//Get current value
+            int nextValue = last == null ? 1 : last.Job+1;
+            data.Job = nextValue ; //Id Auto
             Jobs.Add(data);
             context.SaveChanges();
             return data;
         }
 
+        /// <summary>
+        /// Updata Job
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public Jobs Update(Jobs data)
         {
             if (!Jobs.Any(x => x.Job == data.Job))
@@ -50,7 +70,10 @@ namespace JobBoardApi.Services
             return data;
         }
 
-
+        /// <summary>
+        /// Remove Job
+        /// </summary>
+        /// <param name="data"></param>
         public void Remove(Jobs data)
         {
             if (!Jobs.Any(x => x.Job == data.Job))

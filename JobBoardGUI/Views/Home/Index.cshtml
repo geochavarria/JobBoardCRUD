@@ -3,6 +3,9 @@
     ViewData["Title"] = "Home Page";
 }
 
+<nav class="navbar navbar-light bg-light">
+    <a class="btn btn-success" asp-controller="Home" asp-action="Create">New</a>
+</nav>
 
 <table class="table">
     <thead class="thead-dark">
@@ -28,7 +31,8 @@
             <td>@item.Description</td>
             <td>@item.CreatedAt.ToShortDateString()</td>
             <td>@item.ExpiresAt.ToString()</td>
-            <td><a class="btn btn-success" asp-controller="Home" asp-action="Details" asp-route-id="@item.Job" >Edit</a></td>
+            <td><a class="btn btn-success" asp-controller="Home" asp-action="Edit" asp-route-jobKey="@item.Job" >Edit</a>
+                <a class="btn btn-danger" asp-controller="Home" asp-action="Details" asp-route-jobKey="@item.Job">Delete</a></td>
         </tr>
         }
     </tbody>

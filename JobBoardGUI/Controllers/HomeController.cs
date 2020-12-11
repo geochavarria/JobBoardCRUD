@@ -1,4 +1,5 @@
-﻿using JobBoardGUI.Models;
+﻿using JobBoardApi.Models;
+using JobBoardGUI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -27,9 +28,70 @@ namespace JobBoardGUI.Controllers
             return View(jobs);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Edit(int jobKey)
         {
-            return View();
+            if (jobKey==0)
+            {
+                return RedirectToAction("Error");
+            }
+            var jobInfo = jobRepository.Get(jobKey);
+            return View("Edit", jobInfo);
+        }
+
+        public IActionResult Create(Jobs jobs)
+        {
+            if (ModelState.IsValid)
+            {
+                var result  = jobRepository.Create(jobs);
+                return RedirectToAction("Index");
+            }
+            var jobInfo = new Jobs
+            {
+                JobTitle = "",
+                Description = "",
+                CreatedAt = DateTime.Now,
+                ExpiresAt = DateTime.Now
+            };
+            return View("Create", jobInfo);
+        }
+
+
+        public IActionResult Update(Jobs jobs)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = jobRepository.Update(jobs);
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
+        public IActionResult Details(int? jobKey)
+        {
+            if (jobKey == null)
+            {
+                return NotFound();
+            }
+
+            var jobInfo = jobRepository.Get((int)jobKey);
+            if (jobInfo == null)
+            {
+                return NotFound();
+            }
+
+            return View(jobInfo);
+        }
+
+        public IActionResult Delete(Jobs jobs)
+        {
+            if (jobs.Job == 0)
+            {
+                return NotFound();
+            }
+            jobRepository.Remove(jobs.Job);
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
