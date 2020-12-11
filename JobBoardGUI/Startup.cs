@@ -16,6 +16,7 @@ namespace JobBoardGUI
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            Repository.GlobalParameters.WebAPIBaseUrl = Configuration.GetValue<string>("WebAPIBaseUrl"); // "Web"
         }
 
         public IConfiguration Configuration { get; }

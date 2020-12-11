@@ -13,14 +13,18 @@ namespace JobBoardGUI.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        private Repository.JobRepository jobRepository;
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            jobRepository = new Repository.JobRepository();
         }
 
         public IActionResult Index()
         {
-            return View();
+            var jobs = jobRepository.GetAll();
+            return View(jobs);
         }
 
         public IActionResult Privacy()

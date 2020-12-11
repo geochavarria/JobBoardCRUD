@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "o+3Q6shPLVREqOhdkK9fmCdztP0Fghd0wiTmUpFtMwq3pYP+I8BHLxMZf8gQGhegoHfo599TkBcc4c1xsjJ5dg==",
+  "dgSpecHash": "we9hfGUo6bxceOxiRynRU0RSCBiYv+wv0yvhxfypHEt0tbOe9vsKR2EMqfiIbmO6KKYwiSx+AfoG+H4lHbTJmA==",
   "success": true,
   "projectFilePath": "C:\\Grupo Lorena\\Desarrollo\\JobBoardCRUD\\JobBoardGUI\\JobBoardGUI.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\Geo-TI\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Geo-TI\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\Geo-TI\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\Geo-TI\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Geo-TI\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\Geo-TI\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\Geo-TI\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512"

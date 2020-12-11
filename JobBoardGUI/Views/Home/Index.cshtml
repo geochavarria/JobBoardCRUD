@@ -1,8 +1,35 @@
-﻿@{
+﻿@model List<JobBoardApi.Models.Jobs>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Job Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Expires At</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{int i = 0; }
+        @foreach (var item in Model)
+        {
+            i++;
+
+        <tr>
+            <td>@i.ToString()</td>
+            <td>@item.JobTitle</td>
+            <td>@item.Description</td>
+            <td>@item.CreatedAt.ToShortDateString()</td>
+            <td>@item.ExpiresAt.ToString()</td>
+            <td><a class="btn btn-success" asp-controller="Home" asp-action="Details" asp-route-id="@item.Job" >Edit</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
